@@ -11,11 +11,27 @@
 	  <div id="cursor-inner"></div>
 	</div>
 
-  <h4>UNDER CONTRUCTION</h4>
+  	<h4>UNDER CONTRUCTION</h4>
 
 	<script src="https://unpkg.com/animated-cursor@1.1.1/dist/index.umd.js"></script>
 	<script type="text/javascript">
-		const ac = window.animatedCursor()
+		let acOptions = {
+		  color: '#0ff',
+		  outerAlpha: 0.25,
+		  size: {
+		    inner: 8,
+		    outer: 38
+		  },
+		  hoverScale: {
+		    inner: 0.5,
+		    outer: 1.4
+		  },
+		  clickScale: {
+		    inner: 1.4,
+		    outer: 0.1
+		  }
+		}
+		const ac = window.animatedCursor(acOptions);
 		ac.init()
 	</script>
 </body>
