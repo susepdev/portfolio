@@ -1,9 +1,21 @@
-function App() {
+import Navbar from './components/Navbar';
+import Welcome from './components/Welcome';
+import About from './components/About';
+import Service from './components/Service';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+const App = () => {
   return (
-    <>
-      <p className="text-danger">
-        Click on the Vite and React logos to learn more
-      </p>
+    <> 
+      <Navbar/>
+      <Welcome/>
+      <About/>
+      <Service/>
+      <Portfolio/>
+      <Contact/>
+      <Footer/>
     </>
   )
 }
