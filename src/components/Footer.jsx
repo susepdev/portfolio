@@ -1,11 +1,14 @@
-const Footer = () => {
-  return (
-    <>
-      <h1>
-        Footer
-      </h1>
-    </>
-  )
-}
+const Footer = () => (
+  <div className="welcome">
+    <div className="row">
+      <div className="col-sm-6">
+        1
+      </div>
+      <div className="col-sm-6">
+        2
+      </div>
+    </div>
+  </div>
+)
 
 export default Footer;

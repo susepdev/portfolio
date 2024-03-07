@@ -6,18 +6,18 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-const App = () => {
-  return (
-    <> 
-      <Navbar/>
+const App = () => (
+  <> 
+    <Navbar/>
+    <div className="container">
       <Welcome/>
       <About/>
       <Service/>
       <Portfolio/>
       <Contact/>
       <Footer/>
-    </>
-  )
-}
+    </div>
+  </>
+)
 
 export default App;

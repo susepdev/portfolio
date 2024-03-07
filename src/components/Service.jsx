@@ -1,11 +1,14 @@
-const Service = () => {
-  return (
-    <>
-      <h1>
-        Service
-      </h1>
-    </>
-  )
-}
+const Service = () => (
+  <div className="welcome">
+    <div className="row">
+      <div className="col-sm-6">
+        1
+      </div>
+      <div className="col-sm-6">
+        2
+      </div>
+    </div>
+  </div>
+)
 
 export default Service;
