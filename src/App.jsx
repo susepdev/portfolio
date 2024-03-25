@@ -1,3 +1,5 @@
+import AnimatedCursor from "react-animated-cursor"
+
 import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
 import About from './components/About';
@@ -8,14 +10,15 @@ import Footer from './components/Footer';
 
 const App = () => (
   <> 
+    <AnimatedCursor/>
     <Navbar/>
     <div className="container">
       <Welcome/>
-      <About/>
+      {/* <About/>
       <Service/>
       <Portfolio/>
       <Contact/>
-      <Footer/>
+      <Footer/> */}
     </div>
   </>
 )

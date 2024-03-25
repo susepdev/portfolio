@@ -1,36 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('bg-dark', !darkMode);
+    document.body.classList.toggle('bg-white', darkMode);
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm pt-3 pb-3">
-      <div className="container">
+    <nav className={'navbar navbar-expand-lg fixsed-top pt-3 pb-3 ' + (darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white')}>
+      <div className="container header">
 
         <Link className="navbar-brand" to="/">
-          <img src="https://abdisusep.cloud/img/logo.png" alt="Logo" className="d-inline-block align-text-top logo"/>
-          <span>abdi.susep</span>
+          {
+            darkMode ? 
+            <span className="fw-semibold text-warning">#abdi.susep</span> : 
+            <span className="fw-semibold text-success">#abdi.susep</span>
+          }
         </Link>
 
-        <button className="navbar-toggler" type="button">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse">
+        <div className="">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/">Service</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/">Portfolio</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/">Let's Talk</Link>
+              <button className="nav-link dark-mode" onClick={toggleDarkMode}>
+                {
+                  darkMode ? 
+                  <box-icon type='solid' name='sun' color='#fff'></box-icon> : 
+                  <box-icon name='moon' type='solid' color='#2b3137'></box-icon>
+                }
+              </button>
             </li>
           </ul>
         </div>
