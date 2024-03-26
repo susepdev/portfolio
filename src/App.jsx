@@ -8,7 +8,14 @@ import Project from './components/Project';
 
 const App = () => (
   <RecoilRoot>  
-    <AnimatedCursor/>
+    <AnimatedCursor
+      innerSize={20}
+      outerSize={20}
+      color='240, 170, 50'
+      outerAlpha={0.5}
+      innerScale={0.7}
+      outerScale={3}
+    />
     <Navbar/>
     <div className="container">
       <Welcome/>
