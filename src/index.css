@@ -29,6 +29,11 @@ section.project{
 	padding-right: 100px;
 }
 
+section.footer{
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
 @media (max-width: 768px) {
 	section.welcome {
 		margin-top: 100px;
@@ -42,12 +47,6 @@ section.project{
 	}
 }
 
-.icons {
-	width: 45px;
-	padding-left: 8px;
-	padding-right: 8px;
-}
-
 .dark-mode {
 	padding-top: 6px;
 	padding-bottom: 1px;
@@ -55,19 +54,22 @@ section.project{
 }
 
 .rounded, .btn {
-	border-radius: 12px;
-}
-
-.card-project {
-	border-radius: 12px;
-	transition: all 0.3s ease;
-}
-
-.card-project:hover {
-	border-radius: 12px;
-	background-color: #E1F0DA;
+	border-radius: 12px !important;	
 }
 
 .profile-name {
 	color: #367DB5;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.04);
+}
+
+.cofee {
+	font-size: 20px;
+	color: #F0AA32;
 }

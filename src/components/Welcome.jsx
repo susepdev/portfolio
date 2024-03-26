@@ -23,17 +23,18 @@ const Welcome = () => {
                 <span className="fw-normal me-2">I am a</span>
                 <span className="fw-semibold me-2">software engineer</span>
                 <span className="fw-normal">proficient in utilizing</span>
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="img1" />
-                <img className="icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="img1" />
+
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="45" alt="img1" />
+                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" width="45" alt="img1" />
               </h4>
 
               <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal mb-5'}>
@@ -68,6 +69,7 @@ const Welcome = () => {
                   </Link>
                 </span>
               </div>
+
             </div>
           </div>
         </div>
@@ -75,6 +77,5 @@ const Welcome = () => {
     </section>
   )
 }
-
 
 export default Welcome;
