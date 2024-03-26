@@ -12,7 +12,7 @@ const App = () => (
     <Navbar/>
     <div className="container">
       <Welcome/>
-      <Project/>
+      {/*<Project/>*/}
     </div>
   </RecoilRoot>
 )

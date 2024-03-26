@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={'navbar navbar-expand-lg fixsed-top pt-3 pb-3 ' + (darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white')}>
+    <nav className={'navbar navbar-expand-lg pt-3 pb-3 ' + (darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white')}>
       <div className="container header">
 
         <Link className={`navbar-brand fw-semibold ${darkMode ? 'text-warning' : 'text-success'}`} to="/">
@@ -25,7 +25,11 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <button className="nav-link dark-mode" onClick={toggleDarkMode}>
-                <box-icon type={darkMode ? 'solid' : 'regular'} name={darkMode ? 'sun' : 'moon'} color={darkMode ? '#fff' : '#2b3137'}></box-icon>
+                {
+                  darkMode ?
+                  <box-icon type='solid' name='moon' color='#fff'></box-icon> :
+                  <box-icon type='solid' name='sun' color='#2b3137'></box-icon>
+                }
               </button>
             </li>
           </ul>
