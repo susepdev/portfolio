@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className={'navbar navbar-expand-lg pt-3 pb-3 ' + (darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white')}>
       <div className="container header">
 
-        <Link className={`navbar-brand fw-semibold ${darkMode ? 'text-warning' : 'text-success'}`} to="/">
+        <Link className="navbar-brand fw-semibold profile-name" to="/">
           #abdi.susep
         </Link>
 
