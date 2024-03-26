@@ -7,11 +7,11 @@ const Welcome = () => {
   const darkMode = useRecoilValue(darkModeState);
 
   return (
-    <section className="welcome d-flex flex-wrap align-items-stretch">
+    <section className="welcome">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 col-12 d-flex align-items-center order-lg-1 order-2 welcome-left">
-            <div data-aos="fade-up" data-aos-duration="1000">
+          <div className="col-lg-12 col-12">
+            <div>
 
               <h1 className="m-0 mb-5">
                 <span className="me-2">👋</span>
@@ -53,7 +53,7 @@ const Welcome = () => {
                   </Link>
                 </span>
                 <span className="me-2">
-                  <Link to='https://instagram.com/abdi.susep' target='_blank'>
+                  <Link to='https://instagram.com/abdisusep' target='_blank'>
                     <box-icon type='logo' name='instagram' size='md' color={ darkMode ? '#ffffff' : '#C13584'}></box-icon>
                   </Link>
                 </span>

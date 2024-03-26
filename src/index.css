@@ -18,6 +18,13 @@ body, .navbar {
 
 section.welcome {
 	margin-top: 150px;
+	margin-bottom: 100px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+section.project{
+	margin-bottom: 150px;
 	padding-left: 100px;
 	padding-right: 100px;
 }
@@ -44,5 +51,19 @@ section.welcome {
 .dark-mode {
 	padding-top: 6px;
 	padding-bottom: 1px;
-	border-radius: 8px;
+	border-radius: 12px;
+}
+
+.rounded, .btn {
+	border-radius: 12px;
+}
+
+.card-project {
+	border-radius: 12px;
+	transition: all 0.3s ease;
+}
+
+.card-project:hover {
+	border-radius: 12px;
+	background-color: #E1F0DA;
 }
