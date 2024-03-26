@@ -41,6 +41,12 @@ section.footer{
 		padding-right: 0px;
 	}
 
+	section.project{
+		margin-bottom: 150px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
 	.container.header {
 		padding-left: 28px;
 		padding-right: 28px;
