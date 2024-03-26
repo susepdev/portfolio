@@ -27,8 +27,8 @@ const Navbar = () => {
               <button className="nav-link dark-mode" onClick={toggleDarkMode}>
                 {
                   darkMode ?
-                  <box-icon type='solid' name='moon' color='#fff'></box-icon> :
-                  <box-icon type='solid' name='sun' color='#2b3137'></box-icon>
+                  <box-icon type='solid' name='sun' color='#fff'></box-icon> :
+                  <box-icon type='solid' name='moon' color='#2b3137'></box-icon>
                 }
               </button>
             </li>
