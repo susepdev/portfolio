@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useRecoilState } from 'recoil';
@@ -11,7 +11,18 @@ const Navbar = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle('bg-dark', !darkMode);
     document.body.classList.toggle('bg-white', darkMode);
+
+    localStorage.setItem('darkMode', JSON.stringify(!darkMode));
   };
+
+  useEffect(() => {
+    const isDarkMode = JSON.parse(localStorage.getItem('darkMode'));
+    if(isDarkMode !== null){
+      setDarkMode(isDarkMode);
+      document.body.classList.toggle('bg-dark', isDarkMode);
+      document.body.classList.toggle('bg-white', !isDarkMode);
+    }
+  }, []);
 
   return (
     <nav className={'navbar navbar-expand-lg pt-3 pb-3 ' + (darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white')}>
