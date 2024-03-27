@@ -27,7 +27,7 @@ const Project = () => {
               <div className="col-sm-4 mb-3">
                 <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
                   <Link to="/">
-                    <img src="https://img.freepik.com/free-vector/dashboard-business-user-panel_23-2148359900.jpg" class="card-img-top rounded" alt="img"/>
+                    <img src="https://img.freepik.com/free-vector/dashboard-business-user-panel_23-2148359900.jpg" className="card-img-top rounded" alt="img"/>
                   </Link>
 
                   <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
@@ -54,7 +54,7 @@ const Project = () => {
               <div className="col-sm-4 mb-3">
                 <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
                   <Link to="/">
-                    <img src="https://img.freepik.com/free-psd/landing-page-minimal-style-art-gallery-with-man_23-2148821375.jpg" class="card-img-top rounded" alt="img"/>
+                    <img src="https://img.freepik.com/free-psd/landing-page-minimal-style-art-gallery-with-man_23-2148821375.jpg" className="card-img-top rounded" alt="img"/>
                   </Link>
 
                   <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
@@ -81,7 +81,7 @@ const Project = () => {
               <div className="col-sm-4 mb-3">
                 <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
                   <Link to="/">
-                    <img src="https://img.freepik.com/free-psd/landing-page-corporate-ad-template_23-2148788937.jpg" class="card-img-top rounded" alt="img"/>
+                    <img src="https://img.freepik.com/free-psd/landing-page-corporate-ad-template_23-2148788937.jpg" className="card-img-top rounded" alt="img"/>
                   </Link>
 
                   <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
