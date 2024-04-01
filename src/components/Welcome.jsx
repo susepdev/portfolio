@@ -52,8 +52,8 @@ const Welcome = () => {
                 <span className="fw-normal">proficient in utilizing</span>
 
                 {
-                  skill.map(s => (
-                    <img key={s.id} className="px-2" src={s.image} width="45" alt={s.name} />
+                  skill.map(skl => (
+                    <img key={skl.id} className="px-2" src={skl.image} width="45" alt={skl.name} />
                   ))
                 }
               </h4>
@@ -65,10 +65,10 @@ const Welcome = () => {
 
               <div>
                 {
-                  social.map(s => (
-                  <span className="me-2" key={s.id}>
-                    <Link to={ s.url } target='_blank'>
-                      <box-icon type='logo' name={ s.image } size='md' color={ darkMode ? '#ffffff' : '#2b3137'}></box-icon>
+                  social.map(sc => (
+                  <span className="me-2" key={sc.id}>
+                    <Link to={ sc.url } target='_blank'>
+                      <box-icon type='logo' name={ sc.image } size='md' color={ darkMode ? '#ffffff' : '#2b3137'}></box-icon>
                     </Link>
                   </span>
                   ))

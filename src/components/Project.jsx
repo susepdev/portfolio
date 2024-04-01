@@ -55,7 +55,9 @@ const Project = () => {
           <div className="col-lg-12">
             <div className="row">
               {
-                project.map(p => (
+                project.map((p) => {
+
+                return (
                 <div className="col-sm-4 mb-3" key={p.id}>
                   <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
                     <Link to="/">
@@ -73,7 +75,7 @@ const Project = () => {
                         <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{p.title}</h5>
                       </Link>
 
-                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{p.description}</p>
+                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{ p.description } ...</p>
 
                       <Link to={p.description} target='_blank'>
                         <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
@@ -82,7 +84,7 @@ const Project = () => {
                     </div>
                   </div>
                 </div>
-                ))
+                )})
               }
             </div>
           </div>
