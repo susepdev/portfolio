@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
-import { darkModeState } from '../state/atoms';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { darkModeState, categoryState  } from '../state/atoms';
 
 const Project = () => {
   const darkMode = useRecoilValue(darkModeState);
+  const [category, setCategory] = useRecoilState(categoryState);
+
+  useEffect(() => {
+    fetchDataCategory();
+  }, []);
+
+  const fetchDataCategory = async () => {
+    try {
+      const response = await fetch('https://api.abdisusep.my.id/api/categories');
+      const data = await response.json();
+      setCategory(data);
+    } catch (error) {
+      console.error('Error fetching category data:', error);
+    }
+  };
 
   return (
     <section className="project">
@@ -17,8 +32,11 @@ const Project = () => {
 
           <div className="col-lg-12 mb-5">
             <button className="btn btn-dark px-5 me-2">All</button>
-            <button className="btn btn-light border border-light px-5 me-2">Web</button>
-            <button className="btn btn-light border border-light px-5 me-2">Mobile</button>
+            {
+              category.map(ctg => (
+                <button className="btn btn-light border border-light px-5 me-2" key={ctg.id}>{ ctg.name }</button>
+              ))
+            }
           </div>
 
           <div className="col-lg-12">
