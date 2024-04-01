@@ -1,10 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
-import { darkModeState } from '../state/atoms';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { darkModeState, skillState, socialState  } from '../state/atoms';
 
 const Welcome = () => {
   const darkMode = useRecoilValue(darkModeState);
+  const [skill, setSkill] = useRecoilState(skillState);
+  const [social, setSocial] = useRecoilState(socialState);
+
+  useEffect(() => {
+    fetchDataSkill();
+    fetchDataSocial();
+  }, []);
+
+  const fetchDataSkill = async () => {
+    try {
+      const response = await fetch('https://api.abdisusep.my.id/api/skills');
+      const data = await response.json();
+      setSkill(data);
+    } catch (error) {
+      console.error('Error fetching skills data:', error);
+    }
+  };
+
+  const fetchDataSocial = async () => {
+    try {
+      const response = await fetch('https://api.abdisusep.my.id/api/socials');
+      const data = await response.json();
+      setSocial(data);
+    } catch (error) {
+      console.error('Error fetching socials data:', error);
+    }
+  };
 
   return (
     <section className="welcome">
@@ -24,17 +51,11 @@ const Welcome = () => {
                 <span className="fw-semibold me-2">software engineer</span>
                 <span className="fw-normal">proficient in utilizing</span>
 
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="45" alt="img1" />
-                <img className="px-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" width="45" alt="img1" />
+                {
+                  skill.map(s => (
+                    <img key={s.id} className="px-2" src={s.image} width="45" alt={s.name} />
+                  ))
+                }
               </h4>
 
               <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal mb-5'}>
@@ -43,31 +64,15 @@ const Welcome = () => {
               </h4>
 
               <div>
-                <span className="me-2">
-                  <Link to='https://github.com/abdisusep' target='_blank'>
-                    <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137'}></box-icon>
-                  </Link>
-                </span>
-                <span className="me-2 text-danger">
-                  <Link to='https://linkedin.com/susepsupriatna' target='_blank'>
-                    <box-icon type='logo' name='linkedin-square' size='md' color={ darkMode ? '#ffffff' : '#0a66c2'}></box-icon>
-                  </Link>
-                </span>
-                <span className="me-2">
-                  <Link to='https://instagram.com/abdisusep' target='_blank'>
-                    <box-icon type='logo' name='instagram' size='md' color={ darkMode ? '#ffffff' : '#C13584'}></box-icon>
-                  </Link>
-                </span>
-                <span className="me-2">
-                  <Link to='https://twitter.com/abdisusep' target='_blank'>
-                    <box-icon type='logo' name='twitter' size='md' color={ darkMode ? '#ffffff' : '#1DA1F2'}></box-icon>
-                  </Link>
-                </span>
-                <span className="me-2">
-                  <Link to='https://facebook.com/abdisusep' target='_blank'>
-                    <box-icon type='logo' name='facebook-square' size='md' color={ darkMode ? '#ffffff' : '#1877F2'}></box-icon>
-                  </Link>
-                </span>
+                {
+                  social.map(s => (
+                  <span className="me-2" key={s.id}>
+                    <Link to={ s.url } target='_blank'>
+                      <box-icon type='logo' name={ s.image } size='md' color={ darkMode ? '#ffffff' : '#2b3137'}></box-icon>
+                    </Link>
+                  </span>
+                  ))
+                }
               </div>
 
             </div>

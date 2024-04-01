@@ -9,3 +9,13 @@ export const categoryState = atom({
   key: 'categoryState',
   default: [],
 });
+
+export const skillState = atom({
+  key: 'skillState',
+  default: [],
+});
+
+export const socialState = atom({
+  key: 'socialState',
+  default: [],
+});

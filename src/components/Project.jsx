@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { darkModeState, categoryState  } from '../state/atoms';
+import { darkModeState, categoryState, skillState  } from '../state/atoms';
 
 const Project = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [category, setCategory] = useRecoilState(categoryState);
+  const [skill, setSkill] = useRecoilState(skillState);
 
   useEffect(() => {
     fetchDataCategory();
@@ -33,8 +34,8 @@ const Project = () => {
           <div className="col-lg-12 mb-5">
             <button className="btn btn-dark px-5 me-2">All</button>
             {
-              category.map(ctg => (
-                <button className="btn btn-light border border-light px-5 me-2" key={ctg.id}>{ ctg.name }</button>
+              category.map(c => (
+                <button className="btn btn-light border border-light px-5 me-2" key={c.id}>{ c.name }</button>
               ))
             }
           </div>
