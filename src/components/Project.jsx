@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { darkModeState, categoryState, skillState  } from '../state/atoms';
+import { darkModeState, categoryState, skillState, projectState  } from '../state/atoms';
 
 const Project = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [category, setCategory] = useRecoilState(categoryState);
   const [skill, setSkill] = useRecoilState(skillState);
+  const [project, setProject] = useRecoilState(skillState);
 
   useEffect(() => {
     fetchDataCategory();
+    fetchDataProject();
   }, []);
 
   const fetchDataCategory = async () => {
@@ -19,6 +21,16 @@ const Project = () => {
       setCategory(data);
     } catch (error) {
       console.error('Error fetching category data:', error);
+    }
+  };
+
+  const fetchDataProject = async () => {
+    try {
+      const response = await fetch('https://api.abdisusep.my.id/api/projects');
+      const data = await response.json();
+      setProject(data);
+    } catch (error) {
+      console.error('Error fetching projects data:', error);
     }
   };
 
@@ -42,88 +54,36 @@ const Project = () => {
 
           <div className="col-lg-12">
             <div className="row">
+              {
+                project.map(p => (
+                <div className="col-sm-4 mb-3" key={p.id}>
+                  <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
+                    <Link to="/">
+                      <img src={p.url} className="card-img-top rounded" alt={p.title} />
+                    </Link>
 
-              <div className="col-sm-4 mb-3">
-                <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-                  <Link to="/">
-                    <img src="https://img.freepik.com/free-vector/dashboard-business-user-panel_23-2148359900.jpg" className="card-img-top rounded" alt="img"/>
-                  </Link>
+                    <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
 
-                  <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
+                      <div className="mb-3">
+                        <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="30" alt="img1" />
+                        <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
+                      </div>
 
-                    <div className="mb-3">
-                      <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="30" alt="img1" />
-                      <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
+                      <Link className="text-dark text-decoration-none">
+                        <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{p.title}</h5>
+                      </Link>
+
+                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{p.description}</p>
+
+                      <Link to={p.description} target='_blank'>
+                        <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
+                      </Link>
+
                     </div>
-
-                    <Link className="text-dark text-decoration-none">
-                      <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>Heureuy Login Page</h5>
-                    </Link>
-
-                    <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>Some quick example text to build on ...</p>
-
-                    <Link to='https://github.com/abdisusep' target='_blank'>
-                      <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
-                    </Link>
-
                   </div>
                 </div>
-              </div>
-
-              <div className="col-sm-4 mb-3">
-                <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-                  <Link to="/">
-                    <img src="https://img.freepik.com/free-psd/landing-page-minimal-style-art-gallery-with-man_23-2148821375.jpg" className="card-img-top rounded" alt="img"/>
-                  </Link>
-
-                  <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-
-                    <div className="mb-3">
-                      <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="30" alt="img1" />
-                      <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
-                    </div>
-
-                    <Link className="text-dark text-decoration-none">
-                      <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>Project 2</h5>
-                    </Link>
-
-                    <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>Some quick example text to build on ...</p>
-
-                    <Link to='https://github.com/abdisusep' target='_blank'>
-                      <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
-                    </Link>
-
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-sm-4 mb-3">
-                <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-                  <Link to="/">
-                    <img src="https://img.freepik.com/free-psd/landing-page-corporate-ad-template_23-2148788937.jpg" className="card-img-top rounded" alt="img"/>
-                  </Link>
-
-                  <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-
-                    <div className="mb-3">
-                      <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="30" alt="img1" />
-                      <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
-                    </div>
-
-                    <Link className="text-dark text-decoration-none">
-                      <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>Project 3</h5>
-                    </Link>
-
-                    <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>Some quick example text to build on ...</p>
-
-                    <Link to='https://github.com/abdisusep' target='_blank'>
-                      <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
-                    </Link>
-
-                  </div>
-                </div>
-              </div>
-
+                ))
+              }
             </div>
           </div>
         </div>

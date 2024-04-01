@@ -19,3 +19,8 @@ export const socialState = atom({
   key: 'socialState',
   default: [],
 });
+
+export const projectState = atom({
+  key: 'projectState',
+  default: [],
+});
