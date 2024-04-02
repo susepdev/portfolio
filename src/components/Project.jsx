@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { darkModeState, categoryState, skillState, projectState  } from '../state/atoms';
+
+import { darkModeState, categoryState, projectState  } from '../state/atoms';
 
 const Project = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [category, setCategory] = useRecoilState(categoryState);
-  const [skill, setSkill] = useRecoilState(skillState);
-  const [project, setProject] = useRecoilState(skillState);
+  const [project, setProject] = useRecoilState(projectState);
 
   useEffect(() => {
     fetchDataCategory();
@@ -46,8 +46,8 @@ const Project = () => {
           <div className="col-lg-12 mb-5">
             <button className="btn btn-dark px-5 me-2">All</button>
             {
-              category.map(c => (
-                <button className="btn btn-light border border-light px-5 me-2" key={c.id}>{ c.name }</button>
+              category.map((ctg) => (
+                <button className="btn btn-light border border-light px-5 me-2" key={ctg.id}>{ ctg.name }</button>
               ))
             }
           </div>
@@ -55,13 +55,13 @@ const Project = () => {
           <div className="col-lg-12">
             <div className="row">
               {
-                project.map((p) => {
+                project.map((prj) => {
 
                 return (
-                <div className="col-sm-4 mb-3" key={p.id}>
+                <div className="col-sm-4 mb-3" key={prj.id}>
                   <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
                     <Link to="/">
-                      <img src={p.url} className="card-img-top rounded" alt={p.title} />
+                      <img src={prj.url} className="card-img-top rounded" alt={prj.title} />
                     </Link>
 
                     <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
@@ -72,12 +72,12 @@ const Project = () => {
                       </div>
 
                       <Link className="text-dark text-decoration-none">
-                        <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{p.title}</h5>
+                        <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.title}</h5>
                       </Link>
 
-                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{ p.description } ...</p>
+                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{ prj.description } ...</p>
 
-                      <Link to={p.description} target='_blank'>
+                      <Link to={prj.description} target='_blank'>
                         <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
                       </Link>
 
