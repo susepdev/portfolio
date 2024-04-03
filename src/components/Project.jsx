@@ -66,7 +66,7 @@ const Project = () => {
                 return (
                 <div className="col-sm-4 mb-3" key={prj.id}>
                   <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-                    <Link to={ '/project/' + prj.id }>
+                    <Link to={ prj.url } target="_blank">
                       <img src={prj.url} className="card-img-top rounded" alt={prj.title} />
                     </Link>
 
@@ -77,11 +77,15 @@ const Project = () => {
                         <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
                       </div>
 
-                      <Link className="text-dark text-decoration-none">
+                      <Link to={ prj.url } className="text-dark text-decoration-none">
                         <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.title}</h5>
                       </Link>
 
                       <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.description.slice(0, 80) + '...'}</p>
+
+                      <Link to={ prj.github } className="">
+                        <box-icon type='logo' name='github' size='sm' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
+                      </Link>
                     </div>
                   </div>
                 </div>
