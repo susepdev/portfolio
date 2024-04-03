@@ -9,6 +9,8 @@ const Project = () => {
   const [category, setCategory] = useRecoilState(categoryState);
   const [project, setProject] = useRecoilState(projectState);
 
+  const [categoryActive, setCategoryActive] = useState('*');
+
   useEffect(() => {
     fetchDataCategory();
     fetchDataProject();
@@ -36,7 +38,7 @@ const Project = () => {
   };
 
   const filterDataProject= async (id) => {
-    console.log('filter by id : ' + id);
+    setCategoryActive(id);
     fetchDataProject()
   }
 
@@ -50,10 +52,17 @@ const Project = () => {
           </div>
 
           <div className="col-lg-12 mb-5">
-            <button className={(darkMode ? 'btn btn-primary' : 'btn btn-dark') + ' px-3 me-2 mb-2'} onClick={ () => filterDataProject('*') }>All</button>
+            {
+              darkMode ?
+              <button className={ (categoryActive=='*' ? 'btn btn-primary' : 'btn btn-light') + ' px-3 me-2 mb-2'} onClick={ () => filterDataProject('*') }>All</button> :
+              <button className={ (categoryActive=='*' ? 'btn btn-dark' : 'btn btn-light') + ' px-3 me-2 mb-2'} onClick={ () => filterDataProject('*') }>All</button>
+            }
+
             {
               category.map((ctg) => (
-                <button className={ 'btn ' + (darkMode ? 'btn-light' : 'btn-light') + ' border border-light px-3 me-2 mb-2' } onClick={ () => filterDataProject(ctg.id) } key={ctg.id}>{ ctg.name }</button>
+                darkMode ? 
+                <button className={ (categoryActive==ctg.id ? 'btn btn-primary' : 'btn btn-light') + ' px-3 me-2 mb-2' } onClick={ () => filterDataProject(ctg.id) } key={ctg.id}>{ ctg.name }</button> :
+                <button className={ (categoryActive==ctg.id ? 'btn btn-dark' : 'btn btn-light') + ' px-3 me-2 mb-2' } onClick={ () => filterDataProject(ctg.id) } key={ctg.id}>{ ctg.name }</button>
               ))
             }
           </div>
