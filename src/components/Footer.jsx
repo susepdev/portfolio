@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
 
-          <div className="col-lg-12 mb-4 text-center">
+          <div className="col-lg-12 mb-3 text-center">
             <p className={ darkMode ? 'text-white' : 'text-dark'}>Created with <span className="cofee">☕︎</span> by <span className="fw-semibold profile-name">#abdi.susep</span></p>
           </div>
 

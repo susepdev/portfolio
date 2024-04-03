@@ -24,15 +24,21 @@ const Project = () => {
     }
   };
 
-  const fetchDataProject = async () => {
+  const fetchDataProject = async (id = '') => {
     try {
-      const response = await fetch('https://api.abdisusep.my.id/api/projects');
+      const filter = id ? '' : '';
+      const response = await fetch(`https://api.abdisusep.my.id/api/projects${filter}`);
       const data = await response.json();
       setProject(data);
     } catch (error) {
       console.error('Error fetching projects data:', error);
     }
   };
+
+  const filterDataProject= async (id) => {
+    console.log('filter by id : ' + id);
+    fetchDataProject()
+  }
 
   return (
     <section className="project">
@@ -44,10 +50,10 @@ const Project = () => {
           </div>
 
           <div className="col-lg-12 mb-5">
-            <button className="btn btn-dark px-5 me-2">All</button>
+            <button className={(darkMode ? 'btn btn-primary' : 'btn btn-dark') + ' px-3 me-2 mb-2'} onClick={ () => filterDataProject('*') }>All</button>
             {
               category.map((ctg) => (
-                <button className="btn btn-light border border-light px-5 me-2" key={ctg.id}>{ ctg.name }</button>
+                <button className={ 'btn ' + (darkMode ? 'btn-light' : 'btn-light') + ' border border-light px-3 me-2 mb-2' } onClick={ () => filterDataProject(ctg.id) } key={ctg.id}>{ ctg.name }</button>
               ))
             }
           </div>
@@ -60,7 +66,7 @@ const Project = () => {
                 return (
                 <div className="col-sm-4 mb-3" key={prj.id}>
                   <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
-                    <Link to="/">
+                    <Link to={ '/project/' + prj.id }>
                       <img src={prj.url} className="card-img-top rounded" alt={prj.title} />
                     </Link>
 
@@ -75,12 +81,7 @@ const Project = () => {
                         <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.title}</h5>
                       </Link>
 
-                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{ prj.description } ...</p>
-
-                      <Link to={prj.description} target='_blank'>
-                        <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
-                      </Link>
-
+                      <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.description.slice(0, 80) + '...'}</p>
                     </div>
                   </div>
                 </div>

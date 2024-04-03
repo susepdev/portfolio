@@ -33,6 +33,12 @@ section.footer{
 	padding-right: 100px;
 }
 
+section.project-detail{
+	margin-top: 40px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
 @media (max-width: 768px) {
 	section.welcome {
 		margin-top: 100px;
@@ -47,6 +53,11 @@ section.footer{
 	}
 
 	section.footer{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	section.project-detail{
 		padding-left: 0px;
 		padding-right: 0px;
 	}

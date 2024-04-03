@@ -1,17 +1,15 @@
-import Navbar from './components/Navbar';
-import Welcome from './components/Welcome';
-import Project from './components/Project';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import Project from './pages/Project';
 
 const App = () => (
-  <>  
-    <Navbar/>
-    <div className="container">
-      <Welcome/>
-      <Project/>
-      <Footer/>
-    </div>
-  </>
+  <BrowserRouter>  
+    <Routes>
+      <Route path="/" element={ <Home/> } />
+      <Route path="/project/:id" element={ <Project/> } />
+    </Routes>
+  </BrowserRouter>
 )
 
 export default App;

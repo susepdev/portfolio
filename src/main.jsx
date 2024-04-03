@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import AnimatedCursor from "react-animated-cursor"
 import App from './App.jsx'
@@ -10,7 +9,6 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
       <RecoilRoot>
         <AnimatedCursor
           innerSize={20}
@@ -20,8 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           innerScale={0.7}
           outerScale={3}
         />
-        <App />
+        <App/>
       </RecoilRoot>
-    </BrowserRouter>
   </React.StrictMode>,
 )
