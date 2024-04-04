@@ -86,13 +86,13 @@ const Project = () => {
                         <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
                       </div>
 
-                      <Link to={ prj.url } className="text-dark text-decoration-none">
+                      <Link to={ prj.url } className="text-dark text-decoration-none" target="_blank">
                         <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.title}</h5>
                       </Link>
 
                       <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.description.slice(0, 80) + '...'}</p>
 
-                      <Link to={ prj.github } className="">
+                      <Link to={ prj.github } target="_blank">
                         <box-icon type='logo' name='github' size='sm' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
                       </Link>
                     </div>

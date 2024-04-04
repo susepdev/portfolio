@@ -39,7 +39,23 @@ section.project-detail{
 	padding-right: 100px;
 }
 
+img.profile-image {
+	width: 90%;
+	height: auto;
+	padding:4px;
+	margin-top: 5px;
+	border-radius: 20px;
+	box-shadow: 6px 6px #367DB5;
+}
+
+@media (max-width: 992px) {
+	img.profile-image{
+		display: none;
+	}
+}
+
 @media (max-width: 768px) {
+
 	section.welcome {
 		margin-top: 100px;
 		padding-left: 0px;

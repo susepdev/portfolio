@@ -8,6 +8,7 @@ const Welcome = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [skill, setSkill] = useRecoilState(skillState);
   const [social, setSocial] = useRecoilState(socialState);
+  const [image, setImage] = useState('https://images.unsplash.com/photo-1633332755192-727a05c4013d');
 
   useEffect(() => {
     fetchDataSkill();
@@ -38,7 +39,10 @@ const Welcome = () => {
     <section className="welcome">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 col-12">
+          <div className="col-lg-3 col-12">
+            <img src={ image } className="profile-image"/>
+          </div>
+          <div className="col-lg-9 col-12">
             <div>
 
               <h1 className="m-0 mb-5">
@@ -51,12 +55,13 @@ const Welcome = () => {
                 <span className="fw-normal me-2">I am a</span>
                 <span className="fw-semibold me-2">software engineer</span>
                 <span className="fw-normal">proficient in utilizing</span>
-
+                <div className="mt-2">
                 {
                   skill.map(skl => (
                     <img key={skl.id} className="px-2" src={skl.image} width="45" alt={skl.name} />
                   ))
                 }
+                </div>
               </h4>
 
               <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal mb-5'}>
