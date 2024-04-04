@@ -8,7 +8,6 @@ const Welcome = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [skill, setSkill] = useRecoilState(skillState);
   const [social, setSocial] = useRecoilState(socialState);
-  const [image, setImage] = useState('https://images.unsplash.com/photo-1633332755192-727a05c4013d');
 
   useEffect(() => {
     fetchDataSkill();
@@ -40,7 +39,7 @@ const Welcome = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-12">
-            <img src={ image } className="profile-image"/>
+            <img src="./profile.jpg" className="profile-image"/>
           </div>
           <div className="col-lg-9 col-12">
             <div>
