@@ -51,7 +51,7 @@ const Project = () => {
             <h2 className={ darkMode ? 'text-white' : 'text-dark'}>Projects</h2>
           </div>
 
-          <div className="col-lg-12 mb-5">
+          <div className="col-lg-12 mb-4">
             {
               darkMode ?
               <button className={ (categoryActive=='*' ? 'btn btn-primary' : 'btn btn-light') + ' px-3 me-2 mb-2'} onClick={ () => filterDataProject('*') }>All</button> :
@@ -76,15 +76,26 @@ const Project = () => {
                 <div className="col-sm-4 mb-3" key={prj.id}>
                   <div className={'card border-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
                     <Link to={ prj.url } target="_blank">
-                      <img src={prj.url} className="card-img-top rounded" alt={prj.title} />
+                      <img src={prj.image} className="card-img-top rounded" alt={prj.title} />
                     </Link>
 
                     <div className={'card-body px-0 ' + (darkMode ? 'bg-dark' : 'bg-white')}>
+                      {
+                        prj.project_skills.length > 0 ?
+                        <div className="mb-3">
+                          {
+                            prj.project_skills.map((pskill) => {
+                              return (
+                                <img className="me-2" src={ pskill.skill.image } width="30" alt={ pskill.skill.name } />
+                              )
+                            })
+                          }
+                          
+                        </div>
+                        : false
+                      }
 
-                      <div className="mb-3">
-                        <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="30" alt="img1" />
-                        <img className="me-2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30" alt="img1" />
-                      </div>
+                      
 
                       <Link to={ prj.url } className="text-dark text-decoration-none" target="_blank">
                         <h5 className={ 'card-title ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.title}</h5>
@@ -96,7 +107,7 @@ const Project = () => {
                         <Link to={ prj.github } target="_blank">
                           <box-icon type='logo' name='github' size='sm' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
                         </Link>
-                        : ''
+                        : false
                       }
                       
                     </div>
