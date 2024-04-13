@@ -91,10 +91,14 @@ const Project = () => {
                       </Link>
 
                       <p className={ 'card-text ' + (darkMode ? 'text-white' : 'text-dark') }>{prj.description.slice(0, 80) + '...'}</p>
-
-                      <Link to={ prj.github } target="_blank">
-                        <box-icon type='logo' name='github' size='sm' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
-                      </Link>
+                      {
+                        prj.github ?
+                        <Link to={ prj.github } target="_blank">
+                          <box-icon type='logo' name='github' size='sm' color={ darkMode ? '#ffffff' : '#2b3137' }></box-icon>
+                        </Link>
+                        : ''
+                      }
+                      
                     </div>
                   </div>
                 </div>
