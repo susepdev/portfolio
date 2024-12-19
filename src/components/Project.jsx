@@ -48,7 +48,7 @@ const Project = () => {
         <div className="row">
 
           <div className="col-lg-12 mb-4">
-            <h2 className={ darkMode ? 'text-white' : 'text-dark'}>Projects</h2>
+            <h3 className={ darkMode ? 'text-white' : 'text-dark' + ' fw-normal'}>Projects</h3>
           </div>
 
           <div className="col-lg-12 mb-4">

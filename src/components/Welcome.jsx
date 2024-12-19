@@ -8,6 +8,7 @@ const Welcome = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [skill, setSkill] = useRecoilState(skillState);
   const [social, setSocial] = useRecoilState(socialState);
+  const imageProfile = './profile.jpg';
 
   useEffect(() => {
     fetchDataSkill();
@@ -39,21 +40,21 @@ const Welcome = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-12">
-            <img src="./profile.jpg" className="profile-image"/>
+            <img src={ imageProfile } className="profile-image"/>
           </div>
           <div className="col-lg-9 col-12">
             <div>
 
-              <h1 className="m-0 mb-5">
+              <h1 className="m-0 mt-2 mb-3 fs-3">
                 <span className="me-2">👋</span>
                 <span className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal'}>Hello there, i'm </span>
-                <span className="fw-semibold profile-name">#abdi.susep</span>
+                <span className="fw-normal profile-name">Susep Supriatna</span>
               </h1>
 
               <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' mb-3'}>
-                <span className="fw-normal me-2">I am a</span>
-                <span className="fw-semibold me-2">software engineer</span>
-                <span className="fw-normal">proficient in utilizing</span>
+                <span className="fw-normal me-2 fs-5">I'm a</span>
+                <span className="fw-normal me-2 fs-5 bg-warning">Software Engineer</span>
+                <span className="fw-normal fs-5">with more than 3 years of experience in designing and developing responsive websites and web-based applications. Proficient in frontend and backend technologies, and strong problem-solving skills.</span>
                 <div className="mt-2">
                 {
                   skill.map(skl => (
@@ -63,10 +64,10 @@ const Welcome = () => {
                 </div>
               </h4>
 
-              <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal mb-5'}>
+              {/* <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal mb-5'}>
                 <span>To contact me, you may reach out through the social media links provided below or via my email at</span>
                 <Link className={ (darkMode ? 'text-white' : 'text-dark') + ' text-decoration-underline ms-2 fw-semibold'} to='mailto:abdisusep@gmail.com'>abdisusep@gmail.com</Link>
-              </h4>
+              </h4> */}
 
               <div>
                 {
