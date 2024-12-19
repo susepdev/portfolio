@@ -47,11 +47,11 @@ const Project = () => {
       <div className="container">
         <div className="row">
 
-          <div className="col-lg-12 mb-4">
+          {/* <div className="col-lg-12 mb-4">
             <h3 className={ darkMode ? 'text-white' : 'text-dark' + ' fw-normal'}>Projects</h3>
-          </div>
+          </div> */}
 
-          <div className="col-lg-12 mb-4">
+          {/* <div className="col-lg-12 mb-4">
             {
               darkMode ?
               <button className={ (categoryActive=='*' ? 'btn btn-primary' : 'btn btn-light') + ' px-3 me-2 mb-2'} onClick={ () => filterDataProject('*') }>All</button> :
@@ -65,7 +65,7 @@ const Project = () => {
                 <button className={ (categoryActive==ctg.id ? 'btn btn-dark' : 'btn btn-light') + ' px-3 me-2 mb-2' } onClick={ () => filterDataProject(ctg.id) } key={ctg.id}>{ ctg.name }</button>
               ))
             }
-          </div>
+          </div> */}
 
           <div className="col-lg-12">
             <div className="row">
