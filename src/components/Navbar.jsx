@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav className={'navbar navbar-expand-lg pt-3 pb-3 ' + (darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-white')}>
       <div className="container header">
 
-        <Link className="navbar-brand fw-normal profile-name logo-text" to="/">
+        <Link className="navbar-brand fw-bold profile-name logo-text" to="/">
           #SusepSupriatna
         </Link>
 
