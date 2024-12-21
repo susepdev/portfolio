@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container header">
 
         <Link className="navbar-brand fw-normal profile-name logo-text" to="/">
-          #Susep
+          #SusepSupriatna
         </Link>
 
         <div className="">

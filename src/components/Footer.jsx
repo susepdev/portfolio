@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="row">
 
           <div className="col-lg-12 mb-3 text-center">
-            <p className={ darkMode ? 'text-white' : 'text-dark'}>Created with <span className="cofee">☕︎</span> by <span className="fw-semibold profile-name">#abdi.susep</span></p>
+            <p className={ darkMode ? 'text-white' : 'text-dark'}>Created with <span className="cofee">☕︎</span> by <span className="fw-semibold profile-name">#SusepSupriatna</span></p>
           </div>
 
         </div>
