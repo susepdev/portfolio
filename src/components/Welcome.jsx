@@ -67,7 +67,7 @@ const Welcome = () => {
               <div>
                 <span className="me-2">
                     <Link to='mailto:susep.dev@gmail.com' target='_blank'>
-                      <box-icon name='envelope' size='md' color={ darkMode ? '#2b3137' : '#D93025'}></box-icon>
+                      <box-icon name='envelope' size='md' color={ darkMode ? '#ffffff' : '#D93025'}></box-icon>
                     </Link>
                 </span>
                 <span className="me-2">
