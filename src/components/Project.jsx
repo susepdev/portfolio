@@ -12,8 +12,8 @@ const Project = () => {
   const [categoryActive, setCategoryActive] = useState('*');
 
   useEffect(() => {
-    fetchDataCategory();
-    fetchDataProject();
+    // fetchDataCategory();
+    // fetchDataProject();
   }, []);
 
   const fetchDataCategory = async () => {

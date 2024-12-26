@@ -11,8 +11,8 @@ const Welcome = () => {
   const imageProfile = './profile.jpg';
 
   useEffect(() => {
-    fetchDataSkill();
-    fetchDataSocial();
+    // fetchDataSkill();
+    // fetchDataSocial();
   }, []);
 
   const fetchDataSkill = async () => {
@@ -51,7 +51,7 @@ const Welcome = () => {
                 <span className="fw-normal profile-name">Susep Supriatna</span>
               </h1>
 
-              <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' mb-3'}>
+              <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' mb-2'}>
                 <span className="fw-normal me-2 fs-5">I'm a</span>
                 <span className="fw-normal me-2 fs-5 bg-warning">Software Engineer</span>
                 <span className="fw-normal fs-5">with more than 3 years of experience in designing and developing responsive websites and web-based applications. Proficient in frontend and backend technologies, and strong problem-solving skills.</span>
@@ -64,23 +64,28 @@ const Welcome = () => {
                 </div>
               </h4>
 
-              {/* <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal mb-5'}>
-                <span>To contact me, you may reach out through the social media links provided below or via my email at</span>
-                <Link className={ (darkMode ? 'text-white' : 'text-dark') + ' text-decoration-underline ms-2 fw-semibold'} to='mailto:abdisusep@gmail.com'>abdisusep@gmail.com</Link>
-              </h4> */}
-
               <div>
-                {
-                  social.map(sc => (
-                  <span className="me-2" key={sc.id}>
-                    <Link to={ sc.url } target='_blank'>
-                      <box-icon type='logo' name={ sc.image } size='md' color={ darkMode ? '#ffffff' : '#2b3137'}></box-icon>
+                <span className="me-2">
+                    <Link to='mailto:susep.dev@gmail.com' target='_blank'>
+                      <box-icon name='envelope' size='md' color={ darkMode ? '#2b3137' : '#D93025'}></box-icon>
                     </Link>
-                  </span>
-                  ))
-                }
+                </span>
+                <span className="me-2">
+                    <Link to='https://www.linkedin.com/in/susepsupriatna' target='_blank'>
+                      <box-icon type='logo' name='linkedin-square' size='md' color={ darkMode ? '#ffffff' : '#0077B5'}></box-icon>
+                    </Link>
+                </span>
+                <span className="me-2">
+                    <Link to='https://www.instagram.com/abdi.susep' target='_blank'>
+                      <box-icon type='logo' name='instagram-alt' size='md' color={ darkMode ? '#ffffff' : '#E4405F'}></box-icon>
+                    </Link>
+                </span>
+                <span className="me-2">
+                    <Link to='https://github.com/abdisusep' target='_blank'>
+                      <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#181717'}></box-icon>
+                    </Link>
+                </span>
               </div>
-
             </div>
           </div>
         </div>
