@@ -8,7 +8,7 @@ const Welcome = () => {
   const darkMode = useRecoilValue(darkModeState);
   const [skill, setSkill] = useRecoilState(skillState);
   const [social, setSocial] = useRecoilState(socialState);
-  const imageProfile = './profile.jpg';
+  const imageProfile = './profile.png';
 
   useEffect(() => {
     // fetchDataSkill();
