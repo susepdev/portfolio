@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container header">
 
         <Link className="navbar-brand fw-semibold profile-name logo-text" to="/">
-          #Susep.Dev
+          #susep.dev
         </Link>
 
         <div className="">
