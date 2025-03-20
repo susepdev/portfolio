@@ -48,7 +48,7 @@ const Welcome = () => {
               <h1 className="m-0 mt-2 mb-3 fs-3">
                 <span className="me-2">👋</span>
                 <span className={ (darkMode ? 'text-white' : 'text-dark') + ' fw-normal'}>Hello there, i'm </span>
-                <span className="fw-normal profile-name">Susep Supriatna</span>
+                <span className="fw-normal profile-name">#susep.dev</span>
               </h1>
 
               <h4 className={ (darkMode ? 'text-white' : 'text-dark') + ' mb-2'}>
