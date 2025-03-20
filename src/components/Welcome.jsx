@@ -66,22 +66,22 @@ const Welcome = () => {
 
               <div>
                 <span className="me-2">
-                    <Link to='mailto:susep.dev@gmail.com' target='_blank'>
+                    <Link to='https://www.susepdev.my.id/' target='_blank'>
                       <box-icon name='envelope' size='md' color={ darkMode ? '#ffffff' : '#D93025'}></box-icon>
                     </Link>
                 </span>
                 <span className="me-2">
-                    <Link to='https://www.linkedin.com/in/susepsupriatna' target='_blank'>
+                    <Link to='https://www.susepdev.my.id/' target='_blank'>
                       <box-icon type='logo' name='linkedin-square' size='md' color={ darkMode ? '#ffffff' : '#0077B5'}></box-icon>
                     </Link>
                 </span>
                 <span className="me-2">
-                    <Link to='https://www.instagram.com/abdi.susep' target='_blank'>
+                    <Link to='https://www.susepdev.my.id/' target='_blank'>
                       <box-icon type='logo' name='instagram-alt' size='md' color={ darkMode ? '#ffffff' : '#E4405F'}></box-icon>
                     </Link>
                 </span>
                 <span className="me-2">
-                    <Link to='https://github.com/abdisusep' target='_blank'>
+                    <Link to='https://www.susepdev.my.id/' target='_blank'>
                       <box-icon type='logo' name='github' size='md' color={ darkMode ? '#ffffff' : '#181717'}></box-icon>
                     </Link>
                 </span>
